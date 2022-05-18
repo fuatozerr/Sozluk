@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.Entry
 {
-    internal class EntryVoteEntityConfiguration : BaseEntityConfiguration<Api.Domain.Models.EntryVote>
+    public class EntryVoteEntityConfiguration : BaseEntityConfiguration<Api.Domain.Models.EntryVote>
     {
         public override void Configure(EntityTypeBuilder<EntryVote> builder)
         {

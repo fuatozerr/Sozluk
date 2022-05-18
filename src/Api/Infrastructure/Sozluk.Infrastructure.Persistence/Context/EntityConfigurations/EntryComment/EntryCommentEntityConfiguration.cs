@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.EntryComment
 {
-    internal class EntryCommentEntityConfiguration : BaseEntityConfiguration<Api.Domain.Models.EntryComment>
+    public class EntryCommentEntityConfiguration : BaseEntityConfiguration<Api.Domain.Models.EntryComment>
     {
         public override void Configure(EntityTypeBuilder<Api.Domain.Models.EntryComment> builder)
         {

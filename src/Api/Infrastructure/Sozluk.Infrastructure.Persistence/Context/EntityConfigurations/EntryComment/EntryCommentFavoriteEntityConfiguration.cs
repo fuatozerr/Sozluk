@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.EntryComment
 {
-    internal class EntryCommentFavoriteEntityConfiguration : BaseEntityConfiguration<Api.Domain.Models.EntryCommentFavorite>
+    public class EntryCommentFavoriteEntityConfiguration : BaseEntityConfiguration<Api.Domain.Models.EntryCommentFavorite>
     {
         public override void Configure(EntityTypeBuilder<EntryCommentFavorite> builder)
         {
