@@ -22,8 +22,4 @@
     <ProjectReference Include="..\..\Core\Sozluk.Api.Domain\Sozluk.Api.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Context\EntityConfigurations\" />
-  </ItemGroup>
-
 </Project>
