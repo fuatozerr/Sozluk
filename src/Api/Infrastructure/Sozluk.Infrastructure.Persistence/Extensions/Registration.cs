@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Sozluk.Api.Application.Interfaces.Repositories;
 using Sozluk.Infrastructure.Persistence.Context;
+using Sozluk.Infrastructure.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,10 @@ namespace Sozluk.Infrastructure.Persistence.Extensions
             //hiç data yoksa burayı çalıştıracağız.
             //var seedData = new SeedData();
             //seedData.SeedAsync(configuration).GetAwaiter().GetResult();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IEmailConfirmationRepository, EmailConfirmationRepository>();
+            services.AddScoped<IEntryRepository, EntryRepository>();
+            services.AddScoped<IEntryCommentRepository, EntryCommentRepository>();
             return services;
         }
     }
