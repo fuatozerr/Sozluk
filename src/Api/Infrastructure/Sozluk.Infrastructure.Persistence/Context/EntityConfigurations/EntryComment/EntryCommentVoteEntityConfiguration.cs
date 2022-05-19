@@ -14,8 +14,12 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.EntryCo
         public override void Configure(EntityTypeBuilder<EntryCommentVote> builder)
         {
             base.Configure(builder);
+
             builder.ToTable("entrycommentvote", SozlukContext.DEFAULT_SCHEMA);
-            builder.HasOne(i => i.EntryComment).WithMany(i => i.EntryCommentVotes).HasForeignKey(i => i.EntryCommentId);
+
+            builder.HasOne(i => i.EntryComment)
+                .WithMany(i => i.EntryCommentVotes)
+                .HasForeignKey(i => i.EntryCommentId);
         }
     }
 }

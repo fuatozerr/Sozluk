@@ -14,9 +14,18 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.EntryCo
         public override void Configure(EntityTypeBuilder<EntryCommentFavorite> builder)
         {
             base.Configure(builder);
+
             builder.ToTable("entrycommentfavorite", SozlukContext.DEFAULT_SCHEMA);
-            builder.HasOne(i => i.EntryComment).WithMany(i => i.EntryCommentFavorites).HasForeignKey(i => i.EntryCommentId);
-            builder.HasOne(i => i.CreatedUser).WithMany(i => i.EntryCommentFavorites).HasForeignKey(i => i.CreatedById);
+
+
+            builder.HasOne(i => i.EntryComment)
+                .WithMany(i => i.EntryCommentFavorites)
+                .HasForeignKey(i => i.EntryCommentId);
+
+            builder.HasOne(i => i.CreatedUser)
+                .WithMany(i => i.EntryCommentFavorites)
+                .HasForeignKey(i => i.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

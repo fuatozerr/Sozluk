@@ -14,6 +14,7 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations
         public override void Configure(EntityTypeBuilder<User> builder)
         {
             base.Configure(builder);
+
             builder.ToTable("user", SozlukContext.DEFAULT_SCHEMA);
 
         }

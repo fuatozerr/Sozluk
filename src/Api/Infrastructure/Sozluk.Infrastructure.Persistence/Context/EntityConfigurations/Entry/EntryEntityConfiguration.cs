@@ -14,8 +14,15 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations.Entry
         {
 
             base.Configure(builder);
+
             builder.ToTable("entry", SozlukContext.DEFAULT_SCHEMA);
-            builder.HasOne(i => i.CreatedBy).WithMany(i => i.Entries).HasForeignKey(i => i.CreatedById);
+
+
+            builder.HasOne(i => i.CreatedBy)
+                .WithMany(i => i.Entries)
+                .HasForeignKey(i => i.CreatedById);
+
+
         }
     }
 }

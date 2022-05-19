@@ -13,10 +13,10 @@ namespace Sozluk.Infrastructure.Persistence.Context.EntityConfigurations
     {
         public virtual void Configure(EntityTypeBuilder<T> builder)
         {
-            builder.HasKey(e => e.Id);
-            builder.Property(e => e.Id).ValueGeneratedOnAdd();
-            builder.Property(e => e.CreateDate).ValueGeneratedOnAdd();
-            //throw new NotImplementedException();
+            builder.HasKey(i => i.Id);
+
+            builder.Property(i => i.Id).ValueGeneratedOnAdd();
+            builder.Property(i => i.CreateDate).ValueGeneratedOnAdd();
         }
     }
 }

@@ -13,9 +13,25 @@ namespace Sozluk.Infrastructure.Persistence.Context
     {
         public const string DEFAULT_SCHEMA = "dbo";
 
+        public SozlukContext()
+        {
+
+        }
         public SozlukContext(DbContextOptions options) : base(options)
         {
 
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if(!optionsBuilder.IsConfigured)
+            {
+                var connStr = "Data Source=localhost;Initial Catalog=Sozluk;Persist Security Info=True;User ID=sa;Password=Password12*";
+                optionsBuilder.UseSqlServer(connStr, opt =>
+                {
+                    opt.EnableRetryOnFailure();
+                });
+            }
+            base.OnConfiguring(optionsBuilder);
         }
         public DbSet<User> Users{ get; set; }
         public DbSet<Entry> Entries { get; set; }
