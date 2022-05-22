@@ -13,7 +13,7 @@ namespace Sozluk.Common.Exceptions
         {
         }
 
-        public DatabaseValidationException(string? message) : base(message)
+        public DatabaseValidationException(string? message) : base(message)  
         {
         }
 
