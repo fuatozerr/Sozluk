@@ -33,22 +33,17 @@ namespace Sozluk.Api.Application.Features.Commands.User
         public async Task<LoginUserViewModel> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
             var dbUser = await userRepository.GetSingleAsync(i => i.EmailAddress == request.EmailAddress);
-            if(dbUser==null)
-            {
-                throw new DatabaseValidationException("User not found!");
-            }
-            var pass = PasswordEncryptor.Encrpt(request.Password);
 
-            if(dbUser.Password != pass)
-            {
+            if (dbUser == null)
+                throw new DatabaseValidationException("User not found!");
+
+            var pass = PasswordEncryptor.Encrpt(request.Password);
+            if (dbUser.Password != pass)
                 throw new DatabaseValidationException("Password is wrong!");
 
-            }
-            if(!dbUser.EmailConfirmed)
-            {
+            if (!dbUser.EmailConfirmed)
                 throw new DatabaseValidationException("Email address is not confirmed yet!");
 
-            }
             var result = mapper.Map<LoginUserViewModel>(dbUser);
 
             var claims = new Claim[]
@@ -63,7 +58,6 @@ namespace Sozluk.Api.Application.Features.Commands.User
             result.Token = GenerateToken(claims);
 
             return result;
-
         }
 
         private string GenerateToken(Claim[] claims)
