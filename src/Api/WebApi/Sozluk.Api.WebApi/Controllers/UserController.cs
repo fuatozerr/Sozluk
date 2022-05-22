@@ -23,5 +23,22 @@ namespace Sozluk.Api.WebApi.Controllers
             var result = await mediator.Send(loginUserCommand);
             return Ok(result);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateUserCommand command)
+        {
+            var guid = await mediator.Send(command);
+
+            return Ok(guid);
+        }
+
+        [HttpPost]
+        [Route("Update")]
+        public async Task<IActionResult> UpdateUser([FromBody] UpdateUserCommand command)
+        {
+            var guid = await mediator.Send(command);
+
+            return Ok(guid);
+        }
     }
 }

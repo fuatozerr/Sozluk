@@ -15,7 +15,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Api.Application.Features.Commands.User
+namespace Sozluk.Api.Application.Features.Commands.User.Login
 {
     public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, LoginUserViewModel>
     {
@@ -35,7 +35,7 @@ namespace Sozluk.Api.Application.Features.Commands.User
             var dbUser = await userRepository.GetSingleAsync(i => i.EmailAddress == request.EmailAddress);
 
             if (dbUser == null)
-                throw new DatabaseValidationException("User not found!");  
+                throw new DatabaseValidationException("User not found!");
 
             var pass = PasswordEncryptor.Encrpt(request.Password);
             if (dbUser.Password != pass)
