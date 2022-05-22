@@ -9,7 +9,7 @@ namespace Sozluk.Common.Exceptions
 {
     public class DatabaseValidationException : Exception
     {
-        public DatabaseValidationException()
+        public DatabaseValidationException()  
         {
         }
 
