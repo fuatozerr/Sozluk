@@ -26,7 +26,7 @@ namespace Sozluk.Common.Infrastructure
             var factory = new ConnectionFactory() { HostName = SozlukConstants.RabbitMQHost };
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
-            var result= new EventingBasicConsumer(channel);
+            var result = new EventingBasicConsumer(channel);
             return result;
         }
 

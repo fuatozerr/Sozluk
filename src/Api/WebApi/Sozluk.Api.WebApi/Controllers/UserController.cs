@@ -18,7 +18,7 @@ namespace Sozluk.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login([FromBody]LoginUserCommand loginUserCommand)
+        public async Task<IActionResult> Login([FromBody] LoginUserCommand loginUserCommand)
         {
             var result = await mediator.Send(loginUserCommand);
             return Ok(result);
