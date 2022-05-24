@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Sozluk.Common.Events.User;
 using Sozluk.Common.Models.RequestModels;
 
 namespace Sozluk.Api.WebApi.Controllers
@@ -35,6 +36,15 @@ namespace Sozluk.Api.WebApi.Controllers
         [HttpPost]
         [Route("Update")]
         public async Task<IActionResult> UpdateUser([FromBody] UpdateUserCommand command)
+        {
+            var guid = await mediator.Send(command);
+
+            return Ok(guid);
+        }
+
+        [HttpPost]
+        [Route("UpdatePassword")]
+        public async Task<IActionResult> UpdatePassword([FromBody] ChangeUserPasswordCommand command)
         {
             var guid = await mediator.Send(command);
 

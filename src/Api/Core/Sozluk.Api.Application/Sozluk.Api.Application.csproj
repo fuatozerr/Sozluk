@@ -34,7 +34,6 @@
     <Folder Include="Features\Commands\Entry\DeleteVote\" />
     <Folder Include="Features\Commands\Entry\CreateFav\" />
     <Folder Include="Features\Commands\Entry\Create\" />
-    <Folder Include="Features\Commands\User\ChangePassword\" />
     <Folder Include="Features\Commands\User\ConfirmEmail\" />
     <Folder Include="Features\Queries\" />
   </ItemGroup>
