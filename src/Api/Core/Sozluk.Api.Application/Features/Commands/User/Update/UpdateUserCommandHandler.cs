@@ -39,7 +39,7 @@ namespace Sozluk.Api.Application.Features.Commands.User.Update
 
             if (emailChanged && rows > 0)
             {
-                var @event = new UserEmailChangedEvent()
+                var @event = new UserEmailChangedEvent() 
                 {
                     OldEmailAddress = null,
                     NewEmailAddress = dbUser.EmailAddress
