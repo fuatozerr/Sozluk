@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Sozluk.Api.Application.Mapping
 {
-    public class MappingProfile : Profile
+    public class MappingProfile:Profile
     {
         public MappingProfile()
         {

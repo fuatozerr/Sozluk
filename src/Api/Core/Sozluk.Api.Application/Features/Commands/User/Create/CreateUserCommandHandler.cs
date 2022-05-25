@@ -28,7 +28,7 @@ namespace Sozluk.Api.Application.Features.Commands.Create
 
         public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            var exitsUser = await userRepository.GetSingleAsync(x => x.EmailAddress == request.EMailAddress);
+            var exitsUser =await userRepository.GetSingleAsync(x => x.EmailAddress == request.EMailAddress);
             if (exitsUser is not null)
                 throw new DatabaseValidationException("User already exits!");
 
@@ -43,8 +43,8 @@ namespace Sozluk.Api.Application.Features.Commands.Create
                     NewEmailAddress = dbUser.EmailAddress
                 };
 
-                QueueFactory.SendMessageToExchange(exchangeName: SozlukConstants.UserExchangeName,
-                                                    exchangeType: SozlukConstants.DefaultExchangeType,
+                QueueFactory.SendMessageToExchange(exchangeName: SozlukConstants.UserExchangeName, 
+                                                    exchangeType: SozlukConstants.DefaultExchangeType, 
                                                     queueName: SozlukConstants.UserEmailChangedQueueName, obj: @event);
             }
 

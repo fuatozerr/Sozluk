@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sozluk.Common.Models.RequestModels
 {
-    public class UpdateUserCommand : IRequest<Guid>
+    public class UpdateUserCommand:IRequest<Guid>
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }
