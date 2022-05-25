@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Sozluk.Common.Events.EntryComment
 {
-    internal class DeleteEntryCommentFavEvent
+    public class DeleteEntryCommentFavEvent
     {
+        public Guid EntryCommentId { get; set; }
+
+        public Guid CreatedBy { get; set; }
     }
 }

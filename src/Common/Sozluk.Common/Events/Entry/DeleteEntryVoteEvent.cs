@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Sozluk.Common.Events.Entry
 {
-    internal class DeleteEntryVoteEvent
+    public class DeleteEntryVoteEvent
     {
+        public Guid EntryId { get; set; }
+
+        public Guid CreatedBy { get; set; }
     }
 }

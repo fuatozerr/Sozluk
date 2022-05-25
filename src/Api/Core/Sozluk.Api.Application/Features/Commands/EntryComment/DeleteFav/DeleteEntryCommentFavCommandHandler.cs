@@ -24,6 +24,6 @@ namespace Sozluk.Api.Application.Features.Commands.EntryComment.DeleteFav
                 });
 
             return await Task.FromResult(true);
-        }
+        } 
     }
 }

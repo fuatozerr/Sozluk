@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sozluk.Common.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace Sozluk.Common.Events.EntryComment
 {
-    internal class CreateEntryCommentVoteEvent
+    public class CreateEntryCommentVoteEvent
     {
+        public Guid EntryCommentId { get; set; }
+
+        public VoteType VoteType { get; set; }
+
+        public Guid CreatedBy { get; set; }
     }
 }
