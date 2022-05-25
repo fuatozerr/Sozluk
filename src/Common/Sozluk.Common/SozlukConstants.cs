@@ -15,6 +15,7 @@ namespace Sozluk.Common
         public const string UserEmailChangedQueueName = "UserEmailChangedQueue";
 
         public const string FavExchangeName = "FavExchangeName";
+        public const string CreateEntryFavQueueName = "CreateEntryFavQueueName";
         public const string CreateEntryCommentFavQueueName = "CreateEntryCommentFavQueue";
     }
 }
