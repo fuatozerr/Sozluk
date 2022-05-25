@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Api.Application.Features.Commands.Entry.CreateFav
+namespace Sozluk.Api.Application.Features.Commands.Entry.DeleteFav
 {
-    internal class CreateEntryFavCommandHandler
+    internal class DeleteEntryFavCommand
     {
     }
 }
