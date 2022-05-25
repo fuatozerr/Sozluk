@@ -36,6 +36,9 @@ namespace Sozluk.Api.Application.Features.Commands.User.Login
 
             if (dbUser == null)
                 throw new DatabaseValidationException("User not found!");
+=======
+                throw new DatabaseValidationException("User not found!"); 
+>>>>>>> parent of ee8672e (test2):src/Api/Core/Sozluk.Api.Application/Features/Commands/User/LoginUserCommandHandler.cs
 
             var pass = PasswordEncryptor.Encrpt(request.Password);
             if (dbUser.Password != pass)
