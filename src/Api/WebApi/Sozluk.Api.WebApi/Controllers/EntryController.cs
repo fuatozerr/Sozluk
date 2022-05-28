@@ -19,6 +19,7 @@ namespace Sozluk.Api.WebApi.Controllers
         }
 
         [HttpGet]
+        [Route("GetEntries")]
         public async Task<IActionResult> GetEntries([FromQuery] GetEntriesQuery query)
         {
             var entries = await mediator.Send(query);
