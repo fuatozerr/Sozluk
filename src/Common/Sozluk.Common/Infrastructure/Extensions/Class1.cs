@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sozluk.Common.ViewModels
+namespace Sozluk.Common.Infrastructure.Extensions
 {
-    public enum VoteType
+    internal class Class1
     {
-        None=-1,
-        DownVote=0,
-        UpVote=1
     }
 }
