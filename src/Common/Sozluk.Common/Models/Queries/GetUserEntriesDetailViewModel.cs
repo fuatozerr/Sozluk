@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sozluk.Common.Models.Queries
 {
-    public class GetEntryCommentsViewModel : BaseFooterRateFavoritedViewModel
+    public class GetUserEntriesDetailViewModel : BaseFooterFavoritedViewModel
     {
         public Guid Id { get; set; }
+
+        public string Subject { get; set; }
 
         public string Content { get; set; }
 
