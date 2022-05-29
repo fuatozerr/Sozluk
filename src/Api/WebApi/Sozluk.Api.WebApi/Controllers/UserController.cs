@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sozluk.Api.Application.Features.Commands.User.ConfirmEmail;
+using Sozluk.Api.Application.Features.Queries.GetUserDetail;
 using Sozluk.Common.Events.User;
 using Sozluk.Common.Models.RequestModels;
 

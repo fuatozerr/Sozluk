@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Sozluk.Api.Application.Interfaces.Repositories;
+using Sozluk.Common.Infrastructure.Extensions;
 using Sozluk.Common.Models.Page;
 using Sozluk.Common.Models.Queries;
 using System;
