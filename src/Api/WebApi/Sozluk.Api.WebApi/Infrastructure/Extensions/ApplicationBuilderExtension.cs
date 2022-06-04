@@ -1,4 +1,5 @@
-﻿using Sozluk.Common.Exceptions;
+﻿using Microsoft.AspNetCore.Diagnostics;
+using Sozluk.Common.Exceptions;
 using Sozluk.Common.Infrastructure.Result;
 using System.Net;
 
