@@ -12,11 +12,11 @@ namespace Sozluk.WebApp.Infrastructure.Service
             this.client = client;
         }
 
-        public async Task DeleteEntryVote(Guid entryId)
+        public async Task DeleteEntryVote(Guid entryId )
         {
             var response = await client.PostAsync($"/api/Vote/DeleteEntryVote/{entryId}", null);
             if (!response.IsSuccessStatusCode)
-                throw new Exception("DeleteEntryVote error");
+                throw new Exception("DeleteEntryVote error !");
 
         }
         public async Task DeleteEntryCommentVote(Guid entryId)
