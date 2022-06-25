@@ -1,6 +1,7 @@
 ﻿using Sozluk.Common.Models.Page;
 using Sozluk.Common.Models.Queries;
 using Sozluk.Common.Models.RequestModels;
+using Sozluk.WebApp.Infrastructure.Service.Interfaces;
 using System.Net.Http.Json;
 
 namespace Sozluk.WebApp.Infrastructure.Service
