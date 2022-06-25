@@ -2,6 +2,7 @@
 using Sozluk.Common.Exceptions;
 using Sozluk.Common.Infrastructure.Result;
 using Sozluk.Common.Models.Queries;
+using Sozluk.WebApp.Infrastructure.Service.Interfaces;
 using System.Net.Http.Json;
 using System.Text.Json;
 
