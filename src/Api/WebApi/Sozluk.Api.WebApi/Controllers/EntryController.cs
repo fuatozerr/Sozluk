@@ -2,7 +2,11 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sozluk.Api.Application.Features.Queries.GetEntries;
+using Sozluk.Api.Application.Features.Queries.GetEntryComments;
+using Sozluk.Api.Application.Features.Queries.GetEntryDetail;
 using Sozluk.Api.Application.Features.Queries.GetMainPageEntriesQuery;
+using Sozluk.Api.Application.Features.Queries.GetUserEntries;
+using Sozluk.Common.Models.Queries;
 using Sozluk.Common.Models.RequestModels;
 
 namespace Sozluk.Api.WebApi.Controllers
