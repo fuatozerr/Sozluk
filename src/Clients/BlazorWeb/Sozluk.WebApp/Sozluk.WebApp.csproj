@@ -20,4 +20,8 @@
     <ProjectReference Include="..\..\..\Common\Sozluk.Common\Sozluk.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\MainPages\" />
+  </ItemGroup>
+
 </Project>
