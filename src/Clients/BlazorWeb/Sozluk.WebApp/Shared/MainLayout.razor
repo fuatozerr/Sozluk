@@ -45,7 +45,7 @@
 
     </div>
     
-    <AuthorizeView>
+ @*   <AuthorizeView>
         <Authorized>
             <div class="top-nav">
                 <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Create Entry" @onclick="@NavigateCreateEntryPage" />
@@ -62,7 +62,7 @@
         </NotAuthorized>
 
     </AuthorizeView>
-
+*@
     <div class="sub-nav">
         <a class="sub-nav-item active">bugün</a>
         <a class="sub-nav-item">gündem</a>
@@ -172,5 +172,4 @@
         await OnSearchFocusOut();
         navigationManager.NavigateTo($"/entry/{entryId}");
     }
-
 }

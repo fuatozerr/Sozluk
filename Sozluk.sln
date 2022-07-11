@@ -21,23 +21,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D61E4C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projections", "Projections", "{855DBD8B-C6D9-47E3-A7DB-AC03015E39F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sozluk.Common", "src\Common\Sozluk.Common\Sozluk.Common.csproj", "{1CB44C88-4882-4698-AEB4-AB778D3E3736}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sozluk.Common", "src\Common\Sozluk.Common\Sozluk.Common.csproj", "{1CB44C88-4882-4698-AEB4-AB778D3E3736}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sozluk.Api.Domain", "src\Api\Core\Sozluk.Api.Domain\Sozluk.Api.Domain.csproj", "{88AB03BC-30C3-49D1-9299-52DE4FA4B438}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sozluk.Api.Domain", "src\Api\Core\Sozluk.Api.Domain\Sozluk.Api.Domain.csproj", "{88AB03BC-30C3-49D1-9299-52DE4FA4B438}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sozluk.Api.Application", "src\Api\Core\Sozluk.Api.Application\Sozluk.Api.Application.csproj", "{D0E6A68F-6670-450E-9F2D-057381A0D11D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sozluk.Api.Application", "src\Api\Core\Sozluk.Api.Application\Sozluk.Api.Application.csproj", "{D0E6A68F-6670-450E-9F2D-057381A0D11D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sozluk.Infrastructure.Persistence", "src\Api\Infrastructure\Sozluk.Infrastructure.Persistence\Sozluk.Infrastructure.Persistence.csproj", "{4B0EDCCC-54DF-4E3A-A9FA-29C0B736BED0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sozluk.Infrastructure.Persistence", "src\Api\Infrastructure\Sozluk.Infrastructure.Persistence\Sozluk.Infrastructure.Persistence.csproj", "{4B0EDCCC-54DF-4E3A-A9FA-29C0B736BED0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sozluk.Api.WebApi", "src\Api\WebApi\Sozluk.Api.WebApi\Sozluk.Api.WebApi.csproj", "{8C6BBF63-E225-4DCC-BA82-38B2086CD469}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sozluk.Api.WebApi", "src\Api\WebApi\Sozluk.Api.WebApi\Sozluk.Api.WebApi.csproj", "{8C6BBF63-E225-4DCC-BA82-38B2086CD469}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sozluk.Projections.FavoriteService", "src\Projections\Sozluk.Projections.FavoriteService\Sozluk.Projections.FavoriteService.csproj", "{70ED3074-4E46-4A0C-B8F6-8D6826EC6B27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sozluk.Projections.FavoriteService", "src\Projections\Sozluk.Projections.FavoriteService\Sozluk.Projections.FavoriteService.csproj", "{70ED3074-4E46-4A0C-B8F6-8D6826EC6B27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sozluk.Projections.VoteService", "src\Projections\Sozluk.Projections.VoteService\Sozluk.Projections.VoteService.csproj", "{F0B9D520-B3D4-4F2A-90B4-D98140069112}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sozluk.Projections.VoteService", "src\Projections\Sozluk.Projections.VoteService\Sozluk.Projections.VoteService.csproj", "{F0B9D520-B3D4-4F2A-90B4-D98140069112}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sozluk.ProjectionUserService", "src\Projections\Sozluk.ProjectionUserService\Sozluk.ProjectionUserService.csproj", "{FADFD8F9-1F4A-47D4-8643-D94E185067D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sozluk.ProjectionUserService", "src\Projections\Sozluk.ProjectionUserService\Sozluk.ProjectionUserService.csproj", "{FADFD8F9-1F4A-47D4-8643-D94E185067D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sozluk.WebApp", "src\Clients\BlazorWeb\Sozluk.WebApp\Sozluk.WebApp.csproj", "{719BDE8C-0DA6-4139-9AE2-D939956AF38A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sozluk.WebApp", "src\Clients\BlazorWeb\Sozluk.WebApp\Sozluk.WebApp.csproj", "{719BDE8C-0DA6-4139-9AE2-D939956AF38A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
