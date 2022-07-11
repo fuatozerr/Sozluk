@@ -32,7 +32,7 @@ namespace Sozluk.WebApp.Infrastructure.Service
 
         public async Task<PagedViewModel<GetEntryDetailViewModel>> GetMainPageEntries(int page, int pageSize)
         {
-            var result = await client.GetFromJsonAsync<PagedViewModel<GetEntryDetailViewModel>>($"/api/entry/mainpageentries?page={page}&pageSize={pageSize}");
+            var result = await client.GetFromJsonAsync<PagedViewModel<GetEntryDetailViewModel>>($"/api/entry/MainPageEntries?page={page}&pageSize={pageSize}");
 
             return result;
         }

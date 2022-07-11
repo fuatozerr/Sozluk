@@ -8,6 +8,7 @@
         </a>
     </div>
 
+    
     <div class="search-box">
 
         <div class="input-group">
@@ -56,13 +57,13 @@
         </Authorized>
 
         <NotAuthorized>
-            <div class="top-nav">
-                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Login" @onclick="@NavigateLoginPage" />
-            </div>
+           
         </NotAuthorized>
 
     </AuthorizeView>
-*@
+*@ <div class="top-nav">
+                <input type="button" class="form-control btn-success btn-sozluk w-auto" value="Login" @onclick="@NavigateLoginPage" />
+            </div>
     <div class="sub-nav">
         <a class="sub-nav-item active">bugün</a>
         <a class="sub-nav-item">gündem</a>
