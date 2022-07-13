@@ -11,7 +11,6 @@ namespace Sozluk.Api.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
 
     public class UserController : BaseController
     {
@@ -42,7 +41,6 @@ namespace Sozluk.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("Login")]
-        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
         {
             var res = await mediator.Send(command);
@@ -51,6 +49,8 @@ namespace Sozluk.Api.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
+
         public async Task<IActionResult> Create([FromBody] CreateUserCommand command)
         {
             var guid = await mediator.Send(command);
@@ -60,6 +60,8 @@ namespace Sozluk.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("Update")]
+        [Authorize]
+
         public async Task<IActionResult> UpdateUser([FromBody] UpdateUserCommand command)
         {
             var guid = await mediator.Send(command);
@@ -78,6 +80,8 @@ namespace Sozluk.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("ChangePassword")]
+        [Authorize]
+
         public async Task<IActionResult> ChangePassword([FromBody] ChangeUserPasswordCommand command)
         {
             if (!command.UserId.HasValue)

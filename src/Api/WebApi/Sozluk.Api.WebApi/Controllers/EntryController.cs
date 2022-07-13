@@ -14,7 +14,6 @@ namespace Sozluk.Api.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class EntryController : BaseController
     {
         private readonly IMediator mediator;
@@ -54,6 +53,8 @@ namespace Sozluk.Api.WebApi.Controllers
 
         [HttpGet]
         [Route("UserEntries")]
+        [Authorize]
+
         public async Task<IActionResult> GetUserEntries(string userName, Guid userId, int page, int pageSize)
         {
             if (userId == Guid.Empty && string.IsNullOrEmpty(userName))
@@ -76,6 +77,8 @@ namespace Sozluk.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("CreateEntry")]
+        [Authorize]
+
         public async Task<IActionResult> CreateEntry([FromBody] CreateEntryCommand command)
         {
             if (!command.CreatedById.HasValue)
@@ -88,6 +91,8 @@ namespace Sozluk.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("CreateEntryComment")]
+        [Authorize]
+
         public async Task<IActionResult> CreateEntryComment([FromBody] CreateEntryCommentCommand command)
         {
             if (!command.CreatedById.HasValue)

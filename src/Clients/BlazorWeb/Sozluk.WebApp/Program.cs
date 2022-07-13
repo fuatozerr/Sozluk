@@ -14,7 +14,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddHttpClient("WebApiClient", client =>
 {
     client.BaseAddress = new Uri("https://localhost:7068");
-});//auth eklenecek
+}).AddHttpMessageHandler<AuthTokenHandler>();
 
 builder.Services.AddScoped(sp => {
     var clientFactory = sp.GetRequiredService<IHttpClientFactory>();
@@ -28,6 +28,7 @@ builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IIdentityService, IdentityService>();
 //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddScoped<AuthenticationStateProvider, AuthStateProvider>();
+builder.Services.AddScoped<AuthTokenHandler>();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddAuthorizationCore();
 await builder.Build().RunAsync();
