@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Sozluk.Common.Infrastructure.Result;
 
 namespace Sozluk.Api.WebApi.Infrastructure.ActionFilter
 {
@@ -14,6 +16,8 @@ namespace Sozluk.Api.WebApi.Infrastructure.ActionFilter
                                                         .Distinct().ToList();
 
 
+                var result = new ValidationResponseModel(messages);
+                context.Result = new BadRequestObjectResult(result);
                 return;
             }
 

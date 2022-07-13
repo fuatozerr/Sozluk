@@ -11,6 +11,10 @@ namespace Sozluk.Common.Infrastructure.Result
     {
         public IEnumerable<string> Errors { get; set; }
 
+        public ValidationResponseModel()
+        {
+
+        }
         public ValidationResponseModel(IEnumerable<string> errors)
         {
             Errors = errors;

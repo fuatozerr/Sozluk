@@ -14,11 +14,11 @@
                 }
 
                 <div class="form-group">
-                    <input @bind-value="loginCommand.EmailAddress" class="form-control" type="text" placeholder="Email Address" />
+                    <input @bind-value="loginCommand.EmailAddress" required class="form-control" type="text" placeholder="Email Address" />
                 </div>
                 <br />
                 <div class="form-group">
-                    <input @bind-value="loginCommand.Password" class="form-control" type="password" placeholder="Password" />
+                    <input @bind-value="loginCommand.Password" required class="form-control" type="password" placeholder="Password" />
                 </div>
                 <br />
                 <div class="form-group">
@@ -48,7 +48,7 @@
     {
         try
         {
-            var res = await identityService.Login(loginCommand);
+            var res = await identityService.Login(loginCommand); //şifre string
 
             if (res)
             {

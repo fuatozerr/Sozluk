@@ -4,6 +4,7 @@ using Sozluk.Common.Exceptions;
 using Sozluk.Common.Infrastructure.Result;
 using Sozluk.Common.Models.Queries;
 using Sozluk.Common.Models.RequestModels;
+using Sozluk.WebApp.Infrastructure.Auth;
 using Sozluk.WebApp.Infrastructure.Extensions;
 using Sozluk.WebApp.Infrastructure.Service.Interfaces;
 using System.Net.Http.Json;
@@ -76,7 +77,7 @@ namespace Sozluk.WebApp.Infrastructure.Service
                 syncLocalStorageService.SetUsername(response.UserName);
                 syncLocalStorageService.SetUserId(response.Id);
 
-                // ((AuthStateProvider)authenticationStateProvider).NotifyUserLogin(response.UserName, response.Id);
+                ((AuthStateProvider)authenticationStateProvider).NotifyUserLogin(response.UserName, response.Id);
 
                 httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", response.UserName);
 
@@ -92,7 +93,7 @@ namespace Sozluk.WebApp.Infrastructure.Service
             syncLocalStorageService.RemoveItem(LocalStorageExtension.UserName);
             syncLocalStorageService.RemoveItem(LocalStorageExtension.UserId);
 
-            //((AuthStateProvider)authenticationStateProvider).NotifyUserLogout();
+            ((AuthStateProvider)authenticationStateProvider).NotifyUserLogout();
             httpClient.DefaultRequestHeaders.Authorization = null;
         }
     }
