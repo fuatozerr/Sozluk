@@ -72,7 +72,7 @@ namespace Sozluk.WebApp.Infrastructure.Extensions
 
             return token;
         }
-
+         
         public static void SetToken(this ISyncLocalStorageService localStorageService, string value)
         {
             localStorageService.SetItem(TokenName, value);
