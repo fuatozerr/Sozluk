@@ -7,7 +7,7 @@ namespace Sozluk.WebApp.Infrastructure.Auth
     {
         private readonly ISyncLocalStorageService syncLocalStorageService;
 
-        public AuthTokenHandler(ISyncLocalStorageService syncLocalStorageService)
+        public AuthTokenHandler(ISyncLocalStorageService syncLocalStorageService) 
         {
             this.syncLocalStorageService = syncLocalStorageService;
         }

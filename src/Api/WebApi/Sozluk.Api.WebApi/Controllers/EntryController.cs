@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sozluk.Api.Application.Features.Queries.GetEntries;
@@ -13,6 +14,7 @@ namespace Sozluk.Api.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EntryController : BaseController
     {
         private readonly IMediator mediator;

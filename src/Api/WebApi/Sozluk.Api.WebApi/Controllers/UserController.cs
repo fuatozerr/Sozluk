@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sozluk.Api.Application.Features.Commands.User.ConfirmEmail;
@@ -10,6 +11,8 @@ namespace Sozluk.Api.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class UserController : BaseController
     {
         private readonly IMediator mediator;
@@ -39,6 +42,7 @@ namespace Sozluk.Api.WebApi.Controllers
 
         [HttpPost]
         [Route("Login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
         {
             var res = await mediator.Send(command);

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sozluk.Api.Application.Features.Commands.Entry.DeleteVote;
@@ -10,6 +11,8 @@ namespace Sozluk.Api.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class VoteController : BaseController
     {
         private readonly IMediator mediator;
