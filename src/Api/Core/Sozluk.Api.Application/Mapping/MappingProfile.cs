@@ -21,6 +21,8 @@ namespace Sozluk.Api.Application.Mapping
             CreateMap<CreateUserCommand, User>();
 
             CreateMap<UpdateUserCommand, User>();
+            CreateMap<UserDetailViewModel, User>()
+           .ReverseMap();
 
             CreateMap<CreateEntryCommand, Entry>()
                 .ReverseMap();
