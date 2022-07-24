@@ -23,11 +23,20 @@ namespace Sozluk.Common.Infrastructure
         }
         public static EventingBasicConsumer CreateBasicConsumer()
         {
-            var factory = new ConnectionFactory() { HostName = SozlukConstants.RabbitMQHost };
-            var connection = factory.CreateConnection();
-            var channel = connection.CreateModel();
-            var result= new EventingBasicConsumer(channel);
-            return result;
+            try
+            {
+                var factory = new ConnectionFactory() { HostName = SozlukConstants.RabbitMQHost };
+                var connection = factory.CreateConnection();
+                var channel = connection.CreateModel();
+                var result = new EventingBasicConsumer(channel);
+                return result;
+            }
+            catch (Exception ex )
+            {
+
+                throw ex;
+            }
+          
         }
 
         /// <summary>
@@ -49,6 +58,31 @@ namespace Sozluk.Common.Infrastructure
             consumer.Model.QueueDeclare(queueName, durable: false, exclusive: false, autoDelete: false, null);
             consumer.Model.QueueBind(queueName, exchangeName, queueName); //direct type exchange
 
+
+            return consumer;
+        }
+
+        public static EventingBasicConsumer Receive<T>(this EventingBasicConsumer consumer, Action<T> act)
+        {
+            consumer.Received += (m, eventArgs) =>
+            {
+                var body = eventArgs.Body.ToArray();
+                var message = Encoding.UTF8.GetString(body);
+
+                var model = JsonSerializer.Deserialize<T>(message);
+
+                act(model);
+                consumer.Model.BasicAck(eventArgs.DeliveryTag, false);
+            };
+
+            return consumer;
+        }
+
+        public static EventingBasicConsumer StartConsuming(this EventingBasicConsumer consumer, string queueName)
+        {
+            consumer.Model.BasicConsume(queue: queueName,
+                                        autoAck: false,
+                                        consumer: consumer);
 
             return consumer;
         }
